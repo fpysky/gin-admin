@@ -8,7 +8,7 @@ import (
 
 type MODEL struct {
 	ID        uint           `gorm:"primarykey" json:"ID"` // 主键ID
-	CreatedAt time.Time      // 创建时间
-	UpdatedAt time.Time      // 更新时间
-	DeletedAt gorm.DeletedAt `gorm:"index" json:"-"` // 删除时间
+	CreatedAt time.Time      `gorm:"column:created_at;type:datetime;comment:创建时间" json:"created_at"`
+	UpdatedAt time.Time      `gorm:"type:datetime;default:current_timestamp on update current_timestamp"`
+	DeletedAt gorm.DeletedAt `gorm:"index"`
 }

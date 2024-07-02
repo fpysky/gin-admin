@@ -10,5 +10,5 @@ type Test struct{}
 func (t *Test) InitTestRouter(Router *gin.RouterGroup) {
 	apiGroupApp := api.ApiGroupApp
 
-	Router.GET("hello", apiGroupApp.TestApiGroup.TestController.Test)
+	Router.GET("hello", apiGroupApp.TestApiGroup.TestController.List)
 }
